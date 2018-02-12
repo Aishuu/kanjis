@@ -1,0 +1,33 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3" style="margin-top: 20px">
+            <table class="table">
+            <thead>
+                <tr>
+                    <th>Francais</th>
+                    <th>Kanjis</th>
+                    <th>Hiraganas</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-ng-repeat="x in kanjisDone" data-ng-class="kanjisResult[x] === 0 ? 'current' : kanjisResult[x] === 1 ? 'good' : 'wrong'">
+                    <td>{{ (kanjisResult[x] === 0 && currentGuess === 0) ? "" : kanjisArray[x].french }}</td>
+                    <td class="kanjis">{{ kanjisResult[x] === 0 && currentGuess === 1 ? "" : kanjisArray[x].japanK }}</td>
+                    <td>{{ kanjisResult[x] === 0 && currentGuess === 1 ? "" : kanjisArray[x].japanH }}</td>
+                </tr>
+                <tr data-ng-hide="end">
+                    <td><img src="./assets/img/cross.png" data-ng-click="check(2);"/></td>
+                    <td></td>
+                    <td><img src="./assets/img/tick.png" data-ng-click="check(1);"/></td>
+                </tr>
+                <tr data-ng-show="end">
+                    <td></td>
+                    <td><input type="submit" value="recommencer" data-ng-click="newKanji()" /></td>
+                    <td></td>
+                </tr>
+            </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

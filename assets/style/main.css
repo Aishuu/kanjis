@@ -1,0 +1,18 @@
+tr.current {
+    background-color: #EEEEEE;
+}
+tr.good td {
+    background-color: #55DD55;
+}
+tr.wrong td {
+    background-color: #DD5555;
+}
+th {
+    text-align: center;
+}
+td {
+    text-align: center;
+}
+td.kanjis {
+    font-size: 32px;
+}
